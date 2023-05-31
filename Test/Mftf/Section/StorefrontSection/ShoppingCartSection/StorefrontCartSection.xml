@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="StorefrontCartSection">
+        <element name="ProductConfigOptionOnCart" type="block" parameterized="true"
+                 selector="//table[@id='shopping-cart-table']//div[contains(@class, 'product-item-details')][contains(string(),'{{prodOption}}')]//dd"/>
+        <element name="EstimateShippingAndTax" type="button"
+                 selector="//div[@id='block-shipping']//span[@id='shipping-estimate-toggle']"/>
+        <element name="ShippingMethodPrice" type="button" parameterized="true"
+                 selector="//input[@id='{{shippingMethods}}']/parent::label//div[contains(@x-text, 'rate.price')]"/>
+    </section>
+</sections>
